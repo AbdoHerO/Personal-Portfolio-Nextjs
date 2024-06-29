@@ -15,8 +15,7 @@ import {
   SiAdobephotoshop,
 } from "react-icons/si";
 
-
-//  data
+// data
 const aboutData = [
   {
     title: 'skills',
@@ -24,18 +23,22 @@ const aboutData = [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          { icon: <FaHtml5 />, key: 'FaHtml5' },
+          { icon: <FaCss3 />, key: 'FaCss3' },
+          { icon: <FaJs />, key: 'FaJs' },
+          { icon: <FaReact />, key: 'FaReact' },
+          { icon: <SiNextdotjs />, key: 'SiNextdotjs' },
+          { icon: <SiFramer />, key: 'SiFramer' },
+          { icon: <FaWordpress />, key: 'FaWordpress' },
         ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [
+          { icon: <FaFigma />, key: 'FaFigma' },
+          { icon: <SiAdobexd />, key: 'SiAdobexd' },
+          { icon: <SiAdobephotoshop />, key: 'SiAdobephotoshop' },
+        ],
       },
     ],
   },
@@ -89,7 +92,28 @@ const aboutData = [
 ];
 
 const About = () => {
-  return <div>About</div>;
+  return (
+    <div>
+      {aboutData.map((section, sectionIndex) => (
+        <div key={sectionIndex}>
+          <h2>{section.title}</h2>
+          {section.info.map((infoItem, infoIndex) => (
+            <div key={infoIndex}>
+              <h3>{infoItem.title}</h3>
+              {infoItem.icons && (
+                <div>
+                  {infoItem.icons.map(iconObj => (
+                    <span key={iconObj.key}>{iconObj.icon}</span>
+                  ))}
+                </div>
+              )}
+              {infoItem.stage && <p>{infoItem.stage}</p>}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default About;

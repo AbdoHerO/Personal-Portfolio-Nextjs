@@ -38,7 +38,7 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Lorem Ipsum est un texte d'espace réservé couramment utilisé dans
+            Lorem Ipsum est un texte despace réservé couramment utilisé dans
             les industries graphique, imprimée et éditoriale pour prévisualiser
             les mises en page et les maquettes visuelles.
           </motion.p>
