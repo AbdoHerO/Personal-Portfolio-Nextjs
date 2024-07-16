@@ -129,8 +129,8 @@ const About = () => {
             magnificent designs.
           </h2>
           <p className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0">
-            5 years ago, I began freelancing as a developer. Since then, I've
-            done remove work for agencies, counsulted for startups, and
+            5 years ago, I began freelancing as a developer. Since then, I&apos;ve
+            done remote work for agencies, consulted for startups, and
             collaborated on digital products for business and consumer use.
           </p>
           {/* counters */}
@@ -192,7 +192,7 @@ const About = () => {
                     {/* icons */}
                     {item.icons?.map((icon, indexIcon) => {
                       return (
-                        <div className="text-2xl text-white">{icon.icon}</div>
+                        <div key={icon.key} className="text-2xl text-white">{icon.icon}</div>
                       );
                     })}
                   </div>
